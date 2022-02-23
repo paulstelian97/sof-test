@@ -7,7 +7,7 @@
 SUDO_PASSWD=${SUDO_PASSWD:-}
 
 # global define
-TPLG_ROOT=${TPLG_ROOT:-/lib/firmware/intel/sof-tplg}
+TPLG_ROOT=${TPLG_ROOT:-/lib/firmware/imx/sof-tplg}
 
 # ignore the target keyword for tplg
 # example: ignore 'pipeline ids equal to 2'
@@ -34,7 +34,7 @@ SOFLOGGER=${SOFLOGGER:-}
 # If not set will be automatically set by log function
 # Target Sound Card ID, it will be used in func_pipeline_export for Device ID
 # example: device id 0, pcm id 0: hw0,0; device id 1, pcm id 0: hw1,0;
-SOFCARD=${SOFCARD:-}
+SOFCARD=1
 
 # Decision must be made for how to load the root permission command
 # 0: run cmd as root
@@ -43,7 +43,7 @@ SOFCARD=${SOFCARD:-}
 # example: sudo ls /sys/kernel/debug/
 # 2: run cmd with sudo, but needs sudo password
 # example: echo $SUDO_PASSWD | sudo -S ls /sys/kernel/debug/
-SUDO_LEVEL=${SUDO_LEVEL:-}
+SUDO_LEVEL=0
 
 # The i915 driver sometimes is not ready on a new platform, sof-test
 # will fail because broken HDMI pipelines are present.

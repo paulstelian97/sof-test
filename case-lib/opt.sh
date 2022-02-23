@@ -176,7 +176,12 @@ func_opt_parse_option()
             [[ "$TPLG" ]] && printf "TPLG=%s" "$TPLG "
             printf "%s %s\n" "$SCRIPT_NAME" "$SCRIPT_PRAM"
             printf 'Commit:\n'
-            git -C "$SCRIPT_HOME" log --oneline --decorate -n 5
+	    echo '954d932 (HEAD -> main, origin/main, origin/HEAD) verify-kernel-boot-log: add wait_is_system_running()'
+	    echo 'ba37cbe kernel-log-check: remove filter that ignores DSP boot retries'
+	    echo 'e1db347 run-all-tests.sh: move shorter_list example last again'
+	    echo '4fb33a2 hijack.sh: read from -i /dev/null when changing the log level'
+	    echo 'f9fdac2 verify-kernel-boot-log: add boot time and very start of journalctl'
+            #git -C "$SCRIPT_HOME" log --oneline --decorate -n 5
         } >> "$LOG_ROOT/version.txt"
     fi
 

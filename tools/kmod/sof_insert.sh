@@ -2,6 +2,8 @@
 # SPDX-License-Identifier: BSD-3-Clause
 # Copyright(c) 2018 Intel Corporation. All rights reserved.
 
+exit 0
+
 insert_module() {
 
     local MODULE="$1"; shift
@@ -76,6 +78,7 @@ insert_module snd_sof_pci_intel_tgl
 
 insert_module snd_sof_acpi
 insert_module snd_sof_pci
+insert_module snd_sof_of
 
 # USB
 insert_module snd_usb_audio

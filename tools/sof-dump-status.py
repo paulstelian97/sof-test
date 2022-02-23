@@ -68,6 +68,8 @@ class clsSYSCardInfo():
         exit_code, output=subprocess.getstatusoutput("cat /sys/class/dmi/id/modalias")
         # grep exit 1 means nothing matched
         if exit_code != 0:
+            self.dmi["board_name"] = "imx8"
+            self.dmi["board_vendor"] = "nxp"
             return
         output = output.split(':')
         # ouput[0] = dmi; ouput[-1] = '' ignore
@@ -439,6 +441,8 @@ if __name__ == "__main__":
                 mach_name = acpi_info['hw_name']
         if (mach_name is not None):
             print(mach_name)
+        else:
+            print('imx8') # TODO hack
         exit(0)
 
     if ret_args['power'] is True:
@@ -556,7 +560,7 @@ if __name__ == "__main__":
                 }
             }
         ]
-        fw_path = "/lib/firmware/intel/sof"
+        fw_path = "/lib/firmware/imx/sof"
         sysinfo.loadDMI()
         board = {
                     "ident": sysinfo.dmi["board_name"],

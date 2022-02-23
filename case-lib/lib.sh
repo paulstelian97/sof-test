@@ -99,7 +99,7 @@ find_ldc_file()
         }
         ldcFile=/etc/sof/sof-"$platf".ldc
         [ -e "$ldcFile" ] ||
-            ldcFile=/lib/firmware/intel/sof/sof-"$platf".ldc
+            ldcFile=/lib/firmware/imx/sof/sof-"$platf".ldc
     fi
 
     [[ -e "$ldcFile" ]] || {

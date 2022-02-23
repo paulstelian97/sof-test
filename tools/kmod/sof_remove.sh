@@ -2,6 +2,7 @@
 # SPDX-License-Identifier: BSD-3-Clause
 # Copyright(c) 2018 Intel Corporation. All rights reserved.
 
+exit 0
 
 TOPDIR=$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)
 
@@ -86,6 +87,11 @@ remove_module snd_sof_pci_intel_icl
 remove_module snd_sof_pci_intel_tgl
 remove_module snd_sof_acpi_intel_byt
 remove_module snd_sof_acpi_intel_bdw
+
+# TODO imx
+
+remove_module snd_sof_of
+remove_module snd_sof_imx8
 
 #--------------------------------------------------
 # With older kernels this is in use by snd_sof_pci,
